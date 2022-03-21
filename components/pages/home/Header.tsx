@@ -16,23 +16,21 @@ function Header() {
   const url = useMemo(() => "/img/hero_bg.jpg", []);
 
   useEffect(() => {
-    if (typedElement.current !== null) {
-      const type = new Typed(
-        typedElement.current as unknown as HTMLHeadingElement,
-        {
-          strings: [
-            "reacto_mecha!",
-            "reacto_mecha",
-            "reacto11mecha",
-            "Ezra Khairan Permana",
-          ],
-          typeSpeed: 50,
-          backSpeed: 50,
-          loop: true,
-          showCursor: false,
-        }
-      );
-    }
+    const type = new Typed(
+      typedElement.current as unknown as HTMLHeadingElement,
+      {
+        strings: [
+          "reacto_mecha!",
+          "reacto_mecha",
+          "reacto11mecha",
+          "Ezra Khairan Permana",
+        ],
+        typeSpeed: 50,
+        backSpeed: 50,
+        loop: true,
+        showCursor: false,
+      }
+    );
 
     return () => {
       type.destroy();
