@@ -8,8 +8,13 @@
   padding-bottom: 100%;
 }
 
+.menu {
+  font-family: "Lato";
+}
+
 .spanNama {
   padding-left: 5.5px;
+  font-family: "Poppins";
 }
 
 /* Toggle switcher dark mode light mode */

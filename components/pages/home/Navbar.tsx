@@ -31,7 +31,7 @@ export default function Navbar() {
       <label htmlFor="bmenub" className="burger pseudo button">
         &#8801;
       </label>
-      <div className="menu">
+      <div className={`menu ${styles.menu}`}>
         <a href="#" className="pseudo button icon-picture">
           Botan 1
         </a>

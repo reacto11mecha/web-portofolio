@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@fontsource/lato": "^4.5.3",
+    "@fontsource/poppins": "^4.5.3",
     "classnames": "^2.3.1",
     "next": "12.1.0",
     "picnic": "^7.1.0",
