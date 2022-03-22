@@ -1,5 +1,7 @@
-import Image from "next/image";
 import { useState, memo } from "react";
+import type { MutableRefObject } from "react";
+
+import Image from "next/image";
 import classNames from "classnames/bind";
 import styles from "@/styles/pages/home/Navbar.module.css";
 
@@ -17,13 +19,24 @@ const FotoProfil = memo(function Pfp() {
   );
 });
 
-export default function Navbar() {
-  const [transparan, setTransparan] = useState(false);
+export interface NavbarInterface {
+  introductionRef: MutableRefObject<HTMLElement>;
+}
+
+export default function Navbar(props: NavbarInterface) {
+  const [transparan, setTransparan] = useState<boolean>(true);
   //   const { isDark, themeToggler } = useContext(DarkModeContext);
 
   return (
     <nav className={cx({ transparan })}>
-      <a href="#" className="brand">
+      <a
+        href="#"
+        className="brand"
+        onClick={(e) => {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }}
+      >
         <FotoProfil />
         <span className={styles.spanNama}>Ezra Khairan Permana</span>
       </a>
@@ -31,13 +44,22 @@ export default function Navbar() {
       <label htmlFor="bmenub" className="burger pseudo button">
         &#8801;
       </label>
+
       <div className={`menu ${styles.menu}`}>
-        <a href="#" className="pseudo button icon-picture">
-          Botan 1
+        <a
+          className="pseudo button icon-picture"
+          onClick={() =>
+            props.introductionRef.current.scrollIntoView({
+              behavior: "smooth",
+            })
+          }
+        >
+          Tentang Saya
         </a>
-        <a href="#" className="pseudo button icon-picture">
-          Botan 2
-        </a>
+        <a className="pseudo button icon-picture">Skill</a>
+        <a className="pseudo button icon-picture">Projects</a>
+        <a className="pseudo button icon-picture">Hubungi Saya</a>
+
         <label className={styles.switch}>
           <input
             type="checkbox"
