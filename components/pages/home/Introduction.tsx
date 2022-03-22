@@ -4,7 +4,7 @@ export default function Introduction() {
   return (
     <section className={styles.container}>
       <h1 className={styles.heading}>Tentang Saya</h1>
-      <div className="flex one two-800">
+      <div className="flex one two-1200">
         <div>
           <p className={styles.text}>
             Perkenalkan, Nama saya Ezra Khairan Permana atau biasa dipanggil
