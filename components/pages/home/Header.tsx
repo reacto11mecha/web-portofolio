@@ -50,5 +50,6 @@ const Header = forwardRef<HTMLElement>((props, ref) => {
     </header>
   );
 });
+Header.displayName = "Header";
 
 export default memo(Header);
