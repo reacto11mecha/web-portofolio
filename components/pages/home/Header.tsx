@@ -46,7 +46,7 @@ const Header = forwardRef<HTMLElement>((props, ref) => {
         className={cx({ backgroundImage: true })}
       />
       <div className={styles.content}>
-        <h1 ref={typedElement}></h1>
+        <h1 className={cx({ heading: true })} ref={typedElement}></h1>
       </div>
     </header>
   );
