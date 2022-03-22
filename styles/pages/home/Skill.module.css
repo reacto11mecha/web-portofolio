@@ -1,0 +1,36 @@
+.container {
+  text-align: left;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 75px 0;
+}
+
+.heading {
+  font-family: "Lato";
+  font-size: 2.8em;
+}
+
+.card {
+  min-height: 250px;
+}
+
+.cardHeading {
+  font-family: "Lato";
+  font-size: 1.2em;
+}
+
+.cardItemList {
+  margin-top: 1em;
+}
+
+.cardItem {
+  font-weight: normal;
+  font-family: "Poppins";
+}
+
+@media (max-width: 1100px) {
+  .container {
+    padding: 75px 20px;
+  }
+}

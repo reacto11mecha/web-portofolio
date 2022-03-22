@@ -22,6 +22,7 @@ const FotoProfil = memo(function Pfp() {
 export interface NavbarInterface {
   headerRef: MutableRefObject<HTMLElement>;
   introductionRef: MutableRefObject<HTMLElement>;
+  skillRef: MutableRefObject<HTMLElement>;
 }
 
 export default function Navbar(props: NavbarInterface) {
@@ -75,10 +76,11 @@ export default function Navbar(props: NavbarInterface) {
             transparentDarker: transparan,
             regular: transparan,
           })}`}
-          onClick={() =>
+          onClick={() =>{
             props.introductionRef.current.scrollIntoView({
               behavior: "smooth",
             })
+            if(checked) setChecked(false)}
           }
         >
           Tentang Saya
@@ -88,6 +90,13 @@ export default function Navbar(props: NavbarInterface) {
             transparentDarker: transparan,
             regular: transparan,
           })}`}
+          onClick={() =>{
+            props.skillRef.current.scrollIntoView({
+              behavior: "smooth",
+            })
+
+            if(checked) setChecked(false)}
+          }
         >
           Skill
         </a>
