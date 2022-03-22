@@ -19,10 +19,18 @@ const FotoProfil = memo(function Pfp() {
   );
 });
 
+type refType = MutableRefObject<HTMLElement>;
+
 export interface NavbarInterface {
-  headerRef: MutableRefObject<HTMLElement>;
-  introductionRef: MutableRefObject<HTMLElement>;
-  skillRef: MutableRefObject<HTMLElement>;
+  headerRef: refType;
+  introductionRef: refType;
+  skillRef: refType;
+  projectsRef: refType;
+}
+
+export interface NavigationInterface {
+  text: string;
+  ref: refType;
 }
 
 export default function Navbar(props: NavbarInterface) {
@@ -45,6 +53,24 @@ export default function Navbar(props: NavbarInterface) {
     observer.observe(props.headerRef.current);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  const navigation = useMemo<NavigationInterface[]>(
+    () => [
+      {
+        text: "Tentang Saya",
+        ref: props.introductionRef,
+      },
+      {
+        text: "Skill",
+        ref: props.skillRef,
+      },
+      {
+        text: "Projects",
+        ref: props.projectsRef,
+      },
+    ],
+    []
+  );
 
   return (
     <nav className={cx({ transparan })}>
@@ -71,43 +97,25 @@ export default function Navbar(props: NavbarInterface) {
       </label>
 
       <div className={`menu ${styles.menu}`}>
-        <a
-          className={`pseudo button icon-picture  ${cx({
-            transparentDarker: transparan,
-            regular: transparan,
-          })}`}
-          onClick={() =>{
-            props.introductionRef.current.scrollIntoView({
-              behavior: "smooth",
-            })
-            if(checked) setChecked(false)}
-          }
-        >
-          Tentang Saya
-        </a>
-        <a
-          className={`pseudo button icon-picture ${cx({
-            transparentDarker: transparan,
-            regular: transparan,
-          })}`}
-          onClick={() =>{
-            props.skillRef.current.scrollIntoView({
-              behavior: "smooth",
-            })
+        {navigation.map((nav) => (
+          <a
+            key={nav.text}
+            className={`pseudo button icon-picture  ${cx({
+              transparentDarker: transparan,
+              regular: transparan,
+            })}`}
+            onClick={() => {
+              nav.ref.current.scrollIntoView({
+                behavior: "smooth",
+              });
 
-            if(checked) setChecked(false)}
-          }
-        >
-          Skill
-        </a>
-        <a
-          className={`pseudo button icon-picture ${cx({
-            transparentDarker: transparan,
-            regular: transparan,
-          })}`}
-        >
-          Projects
-        </a>
+              if (checked) setChecked(false);
+            }}
+          >
+            {nav.text}
+          </a>
+        ))}
+
         <a
           className={`pseudo button icon-picture ${cx({
             transparentDarker: transparan,
