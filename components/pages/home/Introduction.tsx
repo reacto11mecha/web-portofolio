@@ -27,5 +27,6 @@ const Introduction = forwardRef<HTMLElement>((props, ref) => (
     </div>
   </section>
 ));
+Introduction.displayName = "Introduction";
 
 export default Introduction;
