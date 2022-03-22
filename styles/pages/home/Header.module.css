@@ -7,6 +7,10 @@
   padding: 1px 0;
 }
 
+.backgroundImage {
+  transition: all 0.5s linear;
+}
+
 .content {
   position: relative;
   top: 45%;

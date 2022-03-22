@@ -1,6 +1,7 @@
-import { useEffect, useRef, useMemo, forwardRef, memo } from "react";
+import { useEffect, useRef, useState, forwardRef, memo } from "react";
 import styles from "@/styles/pages/home/Header.module.css";
 import classNames from "classnames/bind";
+import Image from "next/image";
 import Typed from "typed.js";
 
 // import heroLight from "/img/hero_bg.jpg?webp";
@@ -10,10 +11,10 @@ const cx = classNames.bind(styles);
 
 const Header = forwardRef<HTMLElement>((props, ref) => {
   //   const { isDark } = useContext(DarkModeContext);
-  const typedElement = useRef<HTMLHeadingElement>(null!);
-
   //   const url = useMemo(() => (isDark ? heroDark : heroLight), [isDark]);
-  const url = useMemo(() => "/img/hero_bg.jpg", []);
+  const [url] = useState("/img/hero_bg.jpg");
+
+  const typedElement = useRef<HTMLHeadingElement>(null!);
 
   useEffect(() => {
     const type = new Typed(typedElement.current, {
@@ -35,15 +36,15 @@ const Header = forwardRef<HTMLElement>((props, ref) => {
   }, []);
 
   return (
-    <header
-      className={cx({ header: true })}
-      style={{
-        transition: "all 0.50s linear",
-        backgroundSize: "cover",
-        backgroundImage: `url(${url})`,
-      }}
-      ref={ref}
-    >
+    <header className={cx({ header: true })} ref={ref}>
+      <Image
+        src={url}
+        alt="Gambar background"
+        layout="fill"
+        objectFit="cover"
+        objectPosition={"center"}
+        className={cx({ backgroundImage: true })}
+      />
       <div className={styles.content}>
         <h1 ref={typedElement}></h1>
       </div>
