@@ -3,6 +3,14 @@
   background: none;
 }
 
+.transparentDarker {
+  color: #0e0e0f !important;
+}
+
+.regular {
+  font-weight: normal !important;
+}
+
 .imageProfile {
   border-radius: 50%;
   padding-bottom: 100%;

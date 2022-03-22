@@ -71,7 +71,10 @@ export default function Navbar(props: NavbarInterface) {
 
       <div className={`menu ${styles.menu}`}>
         <a
-          className="pseudo button icon-picture"
+          className={`pseudo button icon-picture  ${cx({
+            transparentDarker: transparan,
+            regular: transparan,
+          })}`}
           onClick={() =>
             props.introductionRef.current.scrollIntoView({
               behavior: "smooth",
@@ -80,9 +83,30 @@ export default function Navbar(props: NavbarInterface) {
         >
           Tentang Saya
         </a>
-        <a className="pseudo button icon-picture">Skill</a>
-        <a className="pseudo button icon-picture">Projects</a>
-        <a className="pseudo button icon-picture">Hubungi Saya</a>
+        <a
+          className={`pseudo button icon-picture ${cx({
+            transparentDarker: transparan,
+            regular: transparan,
+          })}`}
+        >
+          Skill
+        </a>
+        <a
+          className={`pseudo button icon-picture ${cx({
+            transparentDarker: transparan,
+            regular: transparan,
+          })}`}
+        >
+          Projects
+        </a>
+        <a
+          className={`pseudo button icon-picture ${cx({
+            transparentDarker: transparan,
+            regular: transparan,
+          })}`}
+        >
+          Hubungi Saya
+        </a>
 
         <label className={styles.switch}>
           <input
