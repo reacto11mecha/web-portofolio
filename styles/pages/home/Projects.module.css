@@ -15,3 +15,96 @@
 .text {
   font-family: "Poppins";
 }
+
+.card {
+  min-height: 250px;
+}
+
+.imageWrapper {
+  height: 16em;
+  position: relative;
+}
+
+@media (max-width: 1122px) {
+  .container {
+    padding: 75px 20px;
+  }
+}
+
+@media (max-width: 1092px) {
+  .imageWrapper {
+    height: 15em;
+  }
+}
+
+@media (max-width: 1032px) {
+  .imageWrapper {
+    height: 14em;
+  }
+}
+
+@media (max-width: 978px) {
+  .imageWrapper {
+    height: 13em;
+  }
+}
+
+@media (max-width: 902px) {
+  .imageWrapper {
+    height: 12em;
+  }
+}
+
+@media (max-width: 839px) {
+  .imageWrapper {
+    height: 11em;
+  }
+}
+
+@media (max-width: 799px) {
+  .imageWrapper {
+    height: 22em;
+  }
+}
+
+@media (max-width: 743px) {
+  .imageWrapper {
+    height: 20em;
+  }
+}
+
+@media (max-width: 681px) {
+  .imageWrapper {
+    height: 18em;
+  }
+}
+
+@media (max-width: 622px) {
+  .imageWrapper {
+    height: 16em;
+  }
+}
+
+@media (max-width: 562px) {
+  .imageWrapper {
+    height: 14em;
+  }
+}
+
+@media (max-width: 499px) {
+  .imageWrapper {
+    height: 12em;
+  }
+}
+
+@media (max-width: 439px) {
+  .imageWrapper {
+    height: 10em;
+  }
+}
+
+@media (max-width: 380px) {
+  .imageWrapper {
+    height: 8em;
+  }
+}

@@ -4,7 +4,7 @@ const nextConfig = {
   swcMinify: true,
   images: {
     formats: ["image/avif", "image/webp"],
-    domains: ["avatars.githubusercontent.com"],
+    domains: ["avatars.githubusercontent.com", "opengraph.githubassets.com"],
   },
 }
 
