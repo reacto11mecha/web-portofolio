@@ -7,6 +7,7 @@ import Header from "@/components/pages/home/Header";
 import Introduction from "@/components/pages/home/Introduction";
 
 const Home: NextPage = () => {
+  const headerRef = useRef(null!);
   const introductionRef = useRef(null!);
 
   return (
@@ -18,9 +19,9 @@ const Home: NextPage = () => {
           content="Website Portofolio Ezra Khairan Permana"
         />
       </Head>
-      <Navbar introductionRef={introductionRef} />
+      <Navbar headerRef={headerRef} introductionRef={introductionRef} />
       <main>
-        <Header />
+        <Header ref={headerRef} />
         <Introduction ref={introductionRef} />
       </main>
     </div>

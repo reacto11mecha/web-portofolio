@@ -1,4 +1,4 @@
-import { useEffect, useRef, useMemo, memo } from "react";
+import { useEffect, useRef, useMemo, forwardRef, memo } from "react";
 import styles from "@/styles/pages/home/Header.module.css";
 import classNames from "classnames/bind";
 import Typed from "typed.js";
@@ -8,7 +8,7 @@ import Typed from "typed.js";
 
 const cx = classNames.bind(styles);
 
-function Header() {
+const Header = forwardRef<HTMLElement>((props, ref) => {
   //   const { isDark } = useContext(DarkModeContext);
   const typedElement = useRef<HTMLHeadingElement>(null!);
 
@@ -42,12 +42,13 @@ function Header() {
         backgroundSize: "cover",
         backgroundImage: `url(${url})`,
       }}
+      ref={ref}
     >
       <div className={styles.content}>
         <h1 ref={typedElement}></h1>
       </div>
     </header>
   );
-}
+});
 
 export default memo(Header);
