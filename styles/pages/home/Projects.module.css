@@ -16,15 +16,29 @@
   font-family: "Poppins";
 }
 
+.repoText {
+  font-family: "Poppins";
+  font-weight: normal;
+  margin-bottom: 15px !important;
+}
+
 .card {
   min-height: 250px;
 }
 
 .repoName {
   font-family: "Lato";
-  margin-top: 15px !important;
+  margin-top: 24px !important;
   text-align: center;
   width: 100%;
+}
+
+.projectContainer {
+  margin-top: 2em;
+}
+
+.projectFooter {
+  text-align: center;
 }
 
 .imageWrapper {
