@@ -25,11 +25,12 @@ export type iconType =
 
 export interface IconInterface {
   icon: iconType;
+  style?: React.CSSProperties;
 }
 
 export default function Icon(props: IconInterface) {
   return (
-    <svg className={`icon icon-${props.icon}-me`}>
+    <svg className={`icon icon-${props.icon}-me`} {...props}>
       <use xlinkHref={`#symbol-defs_svg__icon-${props.icon}-me`}></use>
     </svg>
   );

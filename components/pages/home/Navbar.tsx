@@ -26,6 +26,7 @@ export interface NavbarInterface {
   introductionRef: refType;
   skillRef: refType;
   projectsRef: refType;
+  contactRef: refType;
 }
 
 export interface NavigationInterface {
@@ -70,8 +71,16 @@ export default function Navbar(props: NavbarInterface) {
         text: "Projects",
         ref: props.projectsRef,
       },
+      {
+        text: "Projects",
+        ref: props.projectsRef,
+      },
+      {
+        text: "Hubungi Saya",
+        ref: props.contactRef,
+      },
     ],
-    []
+    [props.introductionRef, props.skillRef, props.projectsRef, props.contactRef]
   );
 
   return (
@@ -117,15 +126,6 @@ export default function Navbar(props: NavbarInterface) {
             {nav.text}
           </a>
         ))}
-
-        <a
-          className={`pseudo button icon-picture ${cx({
-            transparentDarker: transparan,
-            regular: transparan,
-          })}`}
-        >
-          Hubungi Saya
-        </a>
 
         <label className={styles.switch}>
           <input

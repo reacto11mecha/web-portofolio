@@ -7,6 +7,7 @@ import Header from "@/components/pages/home/Header";
 import Introduction from "@/components/pages/home/Introduction";
 import Skill from "@/components/pages/home/Skill";
 import Projects from "@/components/pages/home/Projects";
+import Contact from "@/components/pages/home/Contact";
 
 import Icon from "../assets/symbol-defs.svg";
 
@@ -15,6 +16,7 @@ const Home: NextPage = () => {
   const introductionRef = useRef(null!);
   const skillRef = useRef(null!);
   const projectsRef = useRef(null!);
+  const contactRef = useRef(null!);
 
   return (
     <div>
@@ -31,12 +33,14 @@ const Home: NextPage = () => {
         introductionRef={introductionRef}
         skillRef={skillRef}
         projectsRef={projectsRef}
+        contactRef={contactRef}
       />
       <main>
         <Header ref={headerRef} />
         <Introduction ref={introductionRef} />
         <Skill ref={skillRef} />
         <Projects ref={projectsRef} />
+        <Contact ref={contactRef} />
       </main>
     </div>
   );

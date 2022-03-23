@@ -1,8 +1,11 @@
 import { forwardRef } from "react";
+import Icon from "@/components/Icon";
+import type { iconType } from "@/components/Icon";
 import styles from "@/styles/pages/home/Skill.module.css";
 
 export interface CardItem {
   text: string;
+  icon: iconType;
 }
 
 export interface CardInterface {
@@ -14,38 +17,38 @@ const cards: CardInterface[] = [
   {
     title: "Bahasa Pemrograman",
     items: [
-      { text: "HTML" },
-      { text: "CSS" },
-      { text: "JavaScript" },
-      { text: "TypeScript" },
+      { text: "HTML", icon: "html" },
+      { text: "CSS", icon: "css" },
+      { text: "JavaScript", icon: "javascript" },
+      { text: "TypeScript", icon: "typescript" },
     ],
   },
   {
     title: "Front End",
     items: [
-      { text: "Bootstrap" },
-      { text: "Picnic CSS" },
-      { text: "React" },
-      { text: "Solid" },
-      { text: "Next.js" },
+      { text: "Bootstrap", icon: "bootstrap" },
+      { text: "Picnic CSS", icon: "picnic" },
+      { text: "React", icon: "react" },
+      { text: "Solid", icon: "solid" },
+      { text: "Next.js", icon: "next" },
     ],
   },
   {
     title: "Back End",
     items: [
-      { text: "Express" },
-      { text: "Fastify" },
-      { text: "MongoDB" },
-      { text: "Node.js" },
+      { text: "Express", icon: "express" },
+      { text: "Fastify", icon: "fastify" },
+      { text: "MongoDB", icon: "mongo" },
+      { text: "Node.js", icon: "node" },
     ],
   },
   {
     title: "Tools",
     items: [
-      { text: "Linux" },
-      { text: "Git" },
-      { text: "Atom" },
-      { text: "VS Codium" },
+      { text: "Linux", icon: "mxlinux" },
+      { text: "Git", icon: "git" },
+      { text: "Atom", icon: "atom" },
+      { text: "Visual Studio Code", icon: "visualstudiocode" },
     ],
   },
 ];
@@ -63,7 +66,10 @@ const Skill = forwardRef<HTMLElement>((props, ref) => (
               <div className={`flex one ${styles.cardItemList}`}>
                 {card.items.map((item) => (
                   <div key={item.text}>
-                    <p className={styles.cardItem}>{item.text}</p>
+                    <p className={styles.cardItem}>
+                      <Icon icon={item.icon} style={{ width: "1em" }} />{" "}
+                      {item.text}
+                    </p>
                   </div>
                 ))}
               </div>
