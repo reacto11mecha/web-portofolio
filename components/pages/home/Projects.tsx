@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { forwardRef } from "react";
+import Icon from "@/components/Icon";
 import styles from "@/styles/pages/home/Projects.module.css";
 
 export interface ProjectInterface {
@@ -13,7 +14,7 @@ const ProjectsData: ProjectInterface[] = [
     repo: "sekilas13/sekilas13-ssr",
     text:
       "Website landing page untuk organisasi Karya Ilmiah Remaja SMP Negeri 13 Kota Bekasi.",
-    web: "https://sekilas13.vercel.app/",
+    web: "hScriptttps://sekilas13.vercel.app/",
   },
   {
     repo: "sekilas13/nva13",
@@ -57,6 +58,7 @@ const Projects = forwardRef<HTMLElement>((props, ref) => (
                 <Image
                   src={`https://opengraph.githubassets.com/HEAD/${project.repo}`}
                   layout="fill"
+                  alt={`Gambar open graph github dari repositor https://github.com/${project.repo}`}
                   objectFit="cover"
                   objectPosition={"center"}
                 />
@@ -66,21 +68,24 @@ const Projects = forwardRef<HTMLElement>((props, ref) => (
             </header>
             <footer className={styles.projectFooter}>
               <a
+                className={styles.projectAnchor}
                 href={`https://github.com/${project.repo}`}
                 target="_blank"
                 rel="noreferrer noopener"
               >
-                Github
+                <Icon icon="github" />
               </a>
+
               {project?.web && (
                 <>
-                  {" "}
+                  {"  "}
                   <a
                     href={project.web}
+                    className={styles.projectAnchor}
                     target="_blank"
                     rel="noreferrer noopener"
                   >
-                    Website
+                    <Icon icon="web" />
                   </a>
                 </>
               )}

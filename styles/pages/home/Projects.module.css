@@ -37,6 +37,11 @@
   margin-top: 2em;
 }
 
+.projectAnchor {
+  color: inherit;
+  font-size: 1.6em;
+}
+
 .projectFooter {
   text-align: center;
 }

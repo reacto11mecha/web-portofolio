@@ -1,0 +1,28 @@
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+
+/* ==========================================
+Single-colored icons can be modified like so:
+.icon-name-me {
+  font-size: 32px;
+  color: red;
+}
+========================================== */
+
+.icon-solid-me {
+  width: 1.0693359375em;
+}
+
+.icon-fastify-me {
+  width: 1.5517578125em;
+}
+
+.icon-express-me {
+  width: 3.43359375em;
+}

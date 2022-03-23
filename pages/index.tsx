@@ -8,6 +8,8 @@ import Introduction from "@/components/pages/home/Introduction";
 import Skill from "@/components/pages/home/Skill";
 import Projects from "@/components/pages/home/Projects";
 
+import Icon from "../assets/symbol-defs.svg";
+
 const Home: NextPage = () => {
   const headerRef = useRef(null!);
   const introductionRef = useRef(null!);
@@ -23,6 +25,7 @@ const Home: NextPage = () => {
           content="Website Portofolio Ezra Khairan Permana"
         />
       </Head>
+      <Icon />
       <Navbar
         headerRef={headerRef}
         introductionRef={introductionRef}
