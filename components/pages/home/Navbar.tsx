@@ -72,10 +72,6 @@ export default function Navbar(props: NavbarInterface) {
         ref: props.projectsRef,
       },
       {
-        text: "Projects",
-        ref: props.projectsRef,
-      },
-      {
         text: "Hubungi Saya",
         ref: props.contactRef,
       },
