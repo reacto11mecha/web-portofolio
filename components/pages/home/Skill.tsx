@@ -60,7 +60,7 @@ const Skill = forwardRef<HTMLElement>((props, ref) => (
       {cards.map((card) => (
         <div key={card.title}>
           <article className={`card ${styles.card}`}>
-            <header>
+            <header className={styles.header}>
               <h3 className={styles.cardHeading}>{card.title}</h3>
 
               <div className={`flex one ${styles.cardItemList}`}>

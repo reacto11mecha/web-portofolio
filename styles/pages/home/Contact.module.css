@@ -1,0 +1,53 @@
+.container {
+  text-align: left;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 75px 0;
+  min-height: 32rem;
+}
+
+.heading {
+  font-family: "Lato";
+  font-size: 2.8em;
+  padding: 0 0;
+}
+
+.text {
+  font-family: "Poppins";
+}
+
+.projectContainer {
+  margin-top: 2em;
+}
+
+.anchorDefault {
+  font-family: "Poppins";
+  width: 100%;
+}
+
+.github {
+  background: #171515;
+}
+
+.instagram {
+  background: #4d2bd8;
+}
+
+.linkedin {
+  background: #007db7;
+}
+
+.telegram {
+  background: #0088cc;
+}
+
+.twitter {
+  background: #1da1f2;
+}
+
+@media (max-width: 1122px) {
+  .container {
+    padding: 75px 20px;
+  }
+}

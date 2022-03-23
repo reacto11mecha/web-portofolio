@@ -11,8 +11,12 @@
   font-size: 2.8em;
 }
 
+.header {
+  padding: 1.9em !important;
+}
+
 .card {
-  min-height: 255px;
+  min-height: 301px;
 }
 
 .cardHeading {

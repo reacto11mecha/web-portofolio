@@ -12,29 +12,24 @@ export interface ProjectInterface {
 const ProjectsData: ProjectInterface[] = [
   {
     repo: "sekilas13/sekilas13-ssr",
-    text:
-      "Website landing page untuk organisasi Karya Ilmiah Remaja SMP Negeri 13 Kota Bekasi.",
-    web: "hScriptttps://sekilas13.vercel.app/",
+    text: "Website landing page untuk organisasi Karya Ilmiah Remaja SMP Negeri 13 Kota Bekasi.",
+    web: "https://sekilas13.vercel.app/",
   },
   {
     repo: "sekilas13/nva13",
-    text:
-      "Aplikasi voting untuk memilih ketua baru berbasis web menggunakan Node js.",
+    text: "Aplikasi voting untuk memilih ketua baru berbasis web menggunakan Node js.",
   },
   {
     repo: "bellshade/Javascript",
-    text:
-      "Repositori untuk belajar bahasa pemrograman Javascript berbahasa Indonesia.",
+    text: "Repositori untuk belajar bahasa pemrograman Javascript berbahasa Indonesia.",
   },
   {
     repo: "bellshade/bellshade-monorepo",
-    text:
-      "Repositori monorepo yang menaungi package-package yang digunakan untuk Organisasi Bellshade.",
+    text: "Repositori monorepo yang menaungi package-package yang digunakan untuk Organisasi Bellshade.",
   },
   {
     repo: "reacto11mecha/auto-attendance",
-    text:
-      "Bot absensi masuk dan keluar yang berjalan otomatis menggunakan puppeteer.",
+    text: "Bot absensi masuk dan keluar yang berjalan otomatis menggunakan puppeteer.",
   },
   {
     repo: "reacto11mecha/nesbaen",
@@ -59,8 +54,6 @@ const Projects = forwardRef<HTMLElement>((props, ref) => (
                   src={`https://opengraph.githubassets.com/HEAD/${project.repo}`}
                   layout="fill"
                   alt={`Gambar open graph github dari repositor https://github.com/${project.repo}`}
-                  objectFit="cover"
-                  objectPosition={"center"}
                 />
               </div>
               <h4 className={styles.repoName}>{project.repo}</h4>
