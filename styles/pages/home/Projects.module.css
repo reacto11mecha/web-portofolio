@@ -27,6 +27,12 @@
   width: 90%;
 }
 
+@media (max-width: 1366px) {
+  .card {
+    min-height: 520px;
+  }
+}
+
 @media (max-width: 1005px) {
   .card {
     min-height: 486px;

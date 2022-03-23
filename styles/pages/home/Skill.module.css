@@ -16,7 +16,8 @@
 }
 
 .card {
-  min-height: 301px;
+  min-height: 305.8px;
+  border: 3px solid #aaa;
 }
 
 .cardHeading {
