@@ -45,6 +45,8 @@ export default function Navbar(props: NavbarInterface) {
           if (entry.isIntersecting) {
             if (entry.intersectionRatio <= 0.85) setTransparan(false);
             else setTransparan(true);
+          } else {
+            if (transparan) setTransparan(false);
           }
         }),
       { threshold: [1, 0.89, 0.86, 0.85, 0.8, 0.75, 0.7, 0.5, 0.25, 0] }
