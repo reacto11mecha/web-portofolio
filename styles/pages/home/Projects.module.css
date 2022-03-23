@@ -20,6 +20,13 @@
   min-height: 250px;
 }
 
+.repoName {
+  font-family: "Lato";
+  margin-top: 15px !important;
+  text-align: center;
+  width: 100%;
+}
+
 .imageWrapper {
   height: 16em;
   position: relative;

@@ -56,7 +56,7 @@ const Projects = forwardRef<HTMLElement>((props, ref) => (
                   objectPosition={"center"}
                 />
               </div>
-              <h4>{project.repo}</h4>
+              <h4 className={styles.repoName}>{project.repo}</h4>
             </header>
             <footer>
               <a
