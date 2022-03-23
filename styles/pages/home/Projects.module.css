@@ -24,6 +24,26 @@
 
 .card {
   min-height: 250px;
+  width: 90%;
+}
+
+@media (max-width: 1005px) {
+  .card {
+    min-height: 486px;
+  }
+}
+
+@media (max-width: 899px) {
+  .card {
+    min-height: 450px;
+  }
+}
+
+@media (max-width: 799px) {
+  .card {
+    width: 100%;
+    min-height: 100px;
+  }
 }
 
 .repoName {
