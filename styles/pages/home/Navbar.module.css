@@ -9,6 +9,7 @@
 
 .regular {
   font-weight: normal !important;
+  color: var(--color-text) !important;
 }
 
 .imageProfile {

@@ -20,3 +20,7 @@
   top: 45%;
   transform: translateY(-50%);
 }
+
+.backgroundImage {
+  transition: ease-in 1s ease-in;
+}

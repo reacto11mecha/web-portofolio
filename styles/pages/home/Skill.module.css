@@ -17,7 +17,8 @@
 
 .card {
   min-height: 305.8px;
-  border: 3px solid #aaa;
+  border: 3px solid var(--color-border-card);
+  background-color: var(--color-background-secondary);
 }
 
 .cardHeading {

@@ -47,7 +47,7 @@ const Contact = forwardRef<HTMLElement>((props, ref) => (
   <section className={styles.container} ref={ref}>
     <h1 className={styles.heading}>Hubungi Saya</h1>
     <p className={styles.text}>
-      Anda bisa menghubungi saya melalui daftar sosial media dibawah ini.
+      Anda bisa menghubungi saya melalui sosial media dibawah ini.
     </p>
     <div
       className={`flex one two-600 three-700 five-900 grow ${styles.projectContainer}`}

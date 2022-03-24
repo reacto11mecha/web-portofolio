@@ -5,6 +5,8 @@ import Image from "next/image";
 import classNames from "classnames/bind";
 import styles from "@/styles/pages/home/Navbar.module.css";
 
+import {useDarkMode} from '@/context/darkMode';
+
 const cx = classNames.bind(styles);
 
 const FotoProfil = memo(function Pfp() {
@@ -35,9 +37,9 @@ export interface NavigationInterface {
 }
 
 export default function Navbar(props: NavbarInterface) {
-  const [transparan, setTransparan] = useState<boolean>(true);
+  const { isDarkTheme, toggleTheme } = useDarkMode()
   const [checked, setChecked] = useState<boolean>(false);
-  //   const { isDark, themeToggler } = useContext(DarkModeContext);
+  const [transparan, setTransparan] = useState<boolean>(true);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -126,8 +128,8 @@ export default function Navbar(props: NavbarInterface) {
         <label className={styles.switch}>
           <input
             type="checkbox"
-            // checked={isDark}
-            // onChange={themeToggler}
+            checked={isDarkTheme}
+            onChange={toggleTheme}
             className={styles.checkboxInput}
           />
           <span className={cx({ slider: true, sliderRound: true })}></span>

@@ -4,19 +4,22 @@ import classNames from "classnames/bind";
 import Image from "next/image";
 import Typed from "typed.js";
 
-// import heroLight from "/img/hero_bg.jpg?webp";
-// import heroDark from "/img/hero_bg-dark.jpg?webp";
+import { useDarkMode } from "@/context/darkMode";
 
 const cx = classNames.bind(styles);
 
+export type imageType = "/img/hero_bg.jpg" | "/img/hero_bg-dark.jpg";
+const getImage = (isDark: boolean): imageType =>
+  isDark ? "/img/hero_bg-dark.jpg" : "/img/hero_bg.jpg";
+
 const Header = forwardRef<HTMLElement>((props, ref) => {
-  //   const { isDark } = useContext(DarkModeContext);
-  //   const url = useMemo(() => (isDark ? heroDark : heroLight), [isDark]);
-  const [url] = useState("/img/hero_bg.jpg");
+  const [url, setUrl] = useState<imageType>("/img/hero_bg.jpg");
+  const { isDarkTheme } = useDarkMode();
 
   const typedElement = useRef<HTMLHeadingElement>(null!);
 
   useEffect(() => {
+    setUrl(getImage(isDarkTheme as unknown as boolean));
     const type = new Typed(typedElement.current, {
       strings: [
         "reacto_mecha!",
@@ -34,6 +37,11 @@ const Header = forwardRef<HTMLElement>((props, ref) => {
       type.destroy();
     };
   }, []);
+
+  useEffect(
+    () => setUrl(getImage(isDarkTheme as unknown as boolean)),
+    [isDarkTheme]
+  );
 
   return (
     <header className={cx({ header: true })} ref={ref}>
