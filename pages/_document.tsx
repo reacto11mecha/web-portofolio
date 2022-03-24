@@ -47,16 +47,33 @@ const themeInitializerScript = async (): Promise<string> => {
   else return minify(runner).then(({ code }) => code as unknown as string);
 };
 
+const gtagScriptInitializer = async (): Promise<string> => {
+  const code = `
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
+      page_path: window.location.pathname
+    });
+  `;
+
+  if (process.env.NODE_ENV === "development") return code;
+  else return minify(code).then(({ code }) => code as unknown as string);
+};
+
 interface Props {
   themeScript: string;
+  gtagScript: string;
 }
 
 class MyDocument extends Document<Props> {
   static async getInitialProps(ctx: DocumentContext) {
     const initialProps = await Document.getInitialProps(ctx);
     const themeScript = await themeInitializerScript();
+    const gtagScript = await gtagScriptInitializer();
 
-    return { ...initialProps, themeScript };
+    return { ...initialProps, themeScript, gtagScript };
   }
 
   render() {
@@ -64,6 +81,16 @@ class MyDocument extends Document<Props> {
       <Html>
         <Head>
           <link rel="shortcut icon" href="/favicon.png" />
+
+          <script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
+          />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: this.props.gtagScript,
+            }}
+          />
         </Head>
         <body>
           <script
