@@ -2,6 +2,7 @@
   --color-background-primary: #fff;
   --color-background-secondary: #fff;
   --color-border-card: #aaa;
+  --color-border-second: #aaa;
   --color-text: #111;
 }
 
@@ -9,6 +10,7 @@
   --color-background-primary: #0d0d0d;
   --color-background-secondary: #1a1b1d;
   --color-border-card: #1a1b1d;
+  --color-border-second: #0d0d0d;
   --color-text: white;
 }
 

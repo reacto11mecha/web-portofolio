@@ -24,9 +24,9 @@
 
 .card {
   min-height: 250px;
-  width: 90%;
+  /* width: 90%; */
   background-color: var(--color-background-secondary);
-  /* border-color: var(--color-background-secondary); */
+  border-color: var(--color-border-second);
 }
 
 @media (max-width: 1366px) {
