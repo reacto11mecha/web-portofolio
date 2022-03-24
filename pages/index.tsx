@@ -26,6 +26,11 @@ const Home: NextPage = () => {
           name="description"
           content="Website Portofolio Ezra Khairan Permana"
         />
+
+        <meta property="og:title" content="Ezra Khairan Permana | Portofolio" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.rmecha.my.id/" />
+        <meta property="og:image" content="https://www.rmecha.my.id/og-img.png" />
       </Head>
       <Icon />
       <Navbar
