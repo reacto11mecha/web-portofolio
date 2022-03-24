@@ -10,7 +10,6 @@ import {
 export type darkModeStateType = boolean | undefined;
 export interface contextInterface {
   isDarkTheme: darkModeStateType;
-  setDarkMode: (theme: boolean) => void;
   toggleTheme: () => void;
 }
 
@@ -22,7 +21,6 @@ export interface propsType {
 export default function Provider(props: propsType) {
   const [isDarkTheme, setDarkTheme] = useState<darkModeStateType>(undefined);
 
-  const setDarkMode = useCallback((theme: boolean) => setDarkTheme(theme), []);
   const toggleTheme = useCallback(() => setDarkTheme((prev) => !prev), []);
 
   useEffect(() => {
@@ -49,8 +47,8 @@ export default function Provider(props: propsType) {
   }, []);
 
   const providerValue = useMemo(
-    () => ({ isDarkTheme, setDarkMode, toggleTheme }),
-    [isDarkTheme, setDarkMode, toggleTheme]
+    () => ({ isDarkTheme, toggleTheme }),
+    [isDarkTheme, toggleTheme]
   );
 
   return <DarkModeContext.Provider value={providerValue} {...props} />;

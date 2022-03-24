@@ -5,7 +5,7 @@ import Image from "next/image";
 import classNames from "classnames/bind";
 import styles from "@/styles/pages/home/Navbar.module.css";
 
-import {useDarkMode} from '@/context/darkMode';
+import { useDarkMode } from "@/context/darkMode";
 
 const cx = classNames.bind(styles);
 
@@ -36,8 +36,8 @@ export interface NavigationInterface {
   ref: refType;
 }
 
-export default function Navbar(props: NavbarInterface) {
-  const { isDarkTheme, toggleTheme } = useDarkMode()
+function Navbar(props: NavbarInterface) {
+  const { isDarkTheme, toggleTheme } = useDarkMode();
   const [checked, setChecked] = useState<boolean>(false);
   const [transparan, setTransparan] = useState<boolean>(true);
 
@@ -128,7 +128,7 @@ export default function Navbar(props: NavbarInterface) {
         <label className={styles.switch}>
           <input
             type="checkbox"
-            checked={isDarkTheme}
+            checked={isDarkTheme || false}
             onChange={toggleTheme}
             className={styles.checkboxInput}
           />
@@ -138,3 +138,5 @@ export default function Navbar(props: NavbarInterface) {
     </nav>
   );
 }
+
+export default memo(Navbar);

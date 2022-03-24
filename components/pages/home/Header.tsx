@@ -36,6 +36,8 @@ const Header = forwardRef<HTMLElement>((props, ref) => {
     return () => {
       type.destroy();
     };
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(

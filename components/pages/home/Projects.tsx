@@ -12,34 +12,28 @@ export interface ProjectInterface {
 const ProjectsData: ProjectInterface[] = [
   {
     repo: "sekilas13/sekilas13-ssr",
-    text:
-      "Website landing page untuk organisasi Karya Ilmiah Remaja SMP Negeri 13 Kota Bekasi. Dibuat dengan Next js dan Bootstrap.",
+    text: "Website landing page untuk organisasi Karya Ilmiah Remaja SMP Negeri 13 Kota Bekasi. Dibuat dengan Next js dan Bootstrap.",
     web: "https://sekilas13.vercel.app/",
   },
   {
     repo: "sekilas13/nva13",
-    text:
-      "Aplikasi voting real-time untuk memilih ketua baru berbasis web. Dibuat menggunakan Node.js, Express, dan MongoDB.",
+    text: "Aplikasi voting real-time untuk memilih ketua baru berbasis web. Dibuat menggunakan Node.js, Express, dan MongoDB.",
   },
   {
     repo: "bellshade/Javascript",
-    text:
-      "Repositori untuk belajar bahasa pemrograman Javascript berbahasa Indonesia. Berisikan materi dasar hingga lanjutan.",
+    text: "Repositori untuk belajar bahasa pemrograman Javascript berbahasa Indonesia. Berisikan materi dasar hingga lanjutan.",
   },
   {
     repo: "bellshade/bellshade-monorepo",
-    text:
-      "Repositori monorepo yang menaungi package-package yang digunakan untuk Organisasi Bellshade.",
+    text: "Repositori monorepo yang menaungi package-package yang digunakan untuk Organisasi Bellshade.",
   },
   {
     repo: "reacto11mecha/auto-attendance",
-    text:
-      "Bot absensi masuk dan keluar yang berjalan otomatis menggunakan puppeteer. Dapat dijalankan tanpa perlu VPS maupun hosting.",
+    text: "Bot absensi masuk dan keluar yang berjalan otomatis menggunakan puppeteer. Dapat dijalankan tanpa perlu VPS maupun hosting.",
   },
   {
     repo: "reacto11mecha/nesbaen",
-    text:
-      "Bot Whatsapp yang digunakan untuk keperluan absensi guru dan siswa. Dibuat dengan menggunakan Node.js dan MongoDB.",
+    text: "Bot Whatsapp yang digunakan untuk keperluan absensi guru dan siswa. Dibuat dengan menggunakan Node.js dan MongoDB.",
   },
 ];
 

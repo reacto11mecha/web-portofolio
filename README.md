@@ -1,6 +1,6 @@
 # Web Portofolio
 
-Selamat Datang ! Ini adalah repositori web portofolio saya yang dibuat dengan Next JS.
+Selamat Datang! Ini adalah repositori web portofolio saya yang dibuat dengan Next JS.
 
 ## Development
 
