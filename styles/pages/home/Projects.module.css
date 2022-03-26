@@ -24,9 +24,14 @@
 
 .card {
   min-height: 250px;
-  /* width: 90%; */
   background-color: var(--color-background-secondary);
   border-color: var(--color-border-second);
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.card:hover {
+  transform: translateY(-3px);
 }
 
 @media (max-width: 1366px) {
