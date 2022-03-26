@@ -17,8 +17,14 @@
 
 .card {
   min-height: 305.8px;
-  border: 3px solid var(--color-border-card);
+  border-color: var(--color-border-card);
   background-color: var(--color-background-secondary);
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.card:hover {
+  transform: translateY(-5px);
 }
 
 .cardHeading {
