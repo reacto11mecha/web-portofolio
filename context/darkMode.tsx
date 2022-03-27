@@ -44,12 +44,21 @@ export default function Provider(props: propsType) {
     );
 
     setDarkTheme(initialColorValue === "dark");
+
+    const localStorageCb = () =>
+      setDarkTheme(window.localStorage.getItem("theme") === "dark");
+
+    window.addEventListener("storage", localStorageCb);
+
+    return () => {
+      window.removeEventListener("storage", localStorageCb);
+    };
   }, []);
 
-  const providerValue = useMemo(
-    () => ({ isDarkTheme, toggleTheme }),
-    [isDarkTheme, toggleTheme]
-  );
+  const providerValue = useMemo(() => ({ isDarkTheme, toggleTheme }), [
+    isDarkTheme,
+    toggleTheme,
+  ]);
 
   return <DarkModeContext.Provider value={providerValue} {...props} />;
 }
