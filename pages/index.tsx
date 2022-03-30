@@ -9,6 +9,8 @@ import Skill from "@/components/pages/home/Skill";
 import Projects from "@/components/pages/home/Projects";
 import Contact from "@/components/pages/home/Contact";
 
+import { useDarkMode } from "@/context/darkMode";
+
 import Icon from "../assets/symbol-defs.svg";
 
 const Home: NextPage = () => {
@@ -18,6 +20,8 @@ const Home: NextPage = () => {
   const projectsRef = useRef(null!);
   const contactRef = useRef(null!);
 
+  const { isDarkTheme } = useDarkMode();
+
   return (
     <div>
       <Head>
@@ -25,6 +29,10 @@ const Home: NextPage = () => {
         <meta
           name="description"
           content="Website Portofolio Ezra Khairan Permana"
+        />
+        <meta
+          name="theme-color"
+          content={isDarkTheme || false ? "#0d0d0d" : "#fff"}
         />
 
         <meta property="og:title" content="Ezra Khairan Permana | Portofolio" />
