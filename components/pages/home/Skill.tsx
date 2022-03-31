@@ -45,7 +45,7 @@ const cards: CardInterface[] = [
   {
     title: "Tools",
     items: [
-      { text: "Linux", icon: "mxlinux" },
+      { text: "MX Linux", icon: "mxlinux" },
       { text: "Git", icon: "git" },
       { text: "Atom", icon: "atom" },
       { text: "Visual Studio Code", icon: "visualstudiocode" },
