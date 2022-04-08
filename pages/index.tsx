@@ -1,6 +1,8 @@
-import type { NextPage } from "next";
+import type { NextPage, GetStaticProps } from "next";
 import Head from "next/head";
 import { useRef } from "react";
+
+import { getTime } from "@/utils/time";
 
 import Navbar from "@/components/pages/home/Navbar";
 import Header from "@/components/pages/home/Header";
@@ -13,7 +15,11 @@ import { useDarkMode } from "@/context/darkMode";
 
 import Icon from "../assets/symbol-defs.svg";
 
-const Home: NextPage = () => {
+export interface propsInterface {
+  time: number;
+}
+
+const Home: NextPage<propsInterface> = ({ time }) => {
   const headerRef = useRef(null!);
   const introductionRef = useRef(null!);
   const skillRef = useRef(null!);
@@ -53,7 +59,7 @@ const Home: NextPage = () => {
       />
       <main>
         <Header ref={headerRef} />
-        <Introduction ref={introductionRef} />
+        <Introduction time={time} ref={introductionRef} />
         <Skill ref={skillRef} />
         <Projects ref={projectsRef} />
         <Contact ref={contactRef} />
@@ -63,3 +69,15 @@ const Home: NextPage = () => {
 };
 
 export default Home;
+
+export const getStaticProps: GetStaticProps = async () => {
+  const time = getTime();
+
+  return {
+    props: {
+      time,
+    },
+    // Satu minggu
+    revalidate: 7 * 24 * 3600,
+  };
+};

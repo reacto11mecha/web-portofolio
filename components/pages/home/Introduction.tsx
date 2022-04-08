@@ -1,17 +1,21 @@
 import { forwardRef } from "react";
 import styles from "@/styles/pages/home/Introduction.module.css";
 
-const Introduction = forwardRef<HTMLElement>((props, ref) => (
+export interface propsInterface {
+  time: number;
+}
+
+const Introduction = forwardRef<HTMLElement, propsInterface>((props, ref) => (
   <section className={styles.container} ref={ref}>
     <h1 className={styles.heading}>Tentang Saya</h1>
     <div className="flex one two-1200">
       <div>
         <p className={styles.text}>
           Perkenalkan, Nama saya Ezra Khairan Permana atau biasa dipanggil Ezra.
-          Saat ini saya berumur 15 tahun. Saya tinggal dan tinggal di Bekasi,
-          Jawa Barat. Masih duduk dibangku sekolah SMA, bersekolah di SMA Negeri
-          12 Kota Bekasi kelas X Bahasa. Sekarang sedang mempelajari bahasa C++
-          dan hal-hal yang berkaitan dengan arduino.
+          Saat ini saya berumur {props.time} tahun. Saya tinggal dan tinggal di
+          Bekasi, Jawa Barat. Masih duduk dibangku sekolah SMA, bersekolah di
+          SMA Negeri 12 Kota Bekasi kelas X Bahasa. Sekarang sedang mempelajari
+          bahasa C++ dan hal-hal yang berkaitan dengan arduino.
         </p>
       </div>
       <div>
