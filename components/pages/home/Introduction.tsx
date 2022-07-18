@@ -14,7 +14,7 @@ const Introduction = forwardRef<HTMLElement, propsInterface>((props, ref) => (
           Perkenalkan, Nama saya Ezra Khairan Permana atau biasa dipanggil Ezra.
           Saat ini saya berumur {props.time} tahun. Saya tinggal dan tinggal di
           Bekasi, Jawa Barat. Masih duduk dibangku sekolah SMA, bersekolah di
-          SMA Negeri 12 Kota Bekasi kelas X Bahasa. Sekarang sedang mempelajari
+          SMA Negeri 12 Kota Bekasi kelas XI Bahasa. Sekarang sedang mempelajari
           bahasa C++ dan hal-hal yang berkaitan dengan arduino.
         </p>
       </div>
