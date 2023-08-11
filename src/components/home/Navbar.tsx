@@ -51,19 +51,19 @@ export const Navbar = () => {
 
     return (
         <nav
-            className={`flex fixed top-0 flex-wrap items-center justify-between w-full py-4 md:py-0 px-4 text-lg ${isTransparent ? "" : "bg-white border-b border-solid"
+            className={`flex fixed top-0 flex-wrap items-center justify-between w-full py-4 md:py-0 px-4 text-lg ${isTransparent ? "" : "bg-white dark:bg-neutral-900 dark:border-neutral-900 border-b border-solid"
                 } z-10`}
         >
             <div className="h-[inherit]">
                 <button
-                    className="ml-2 h-[inherit] flex items-center font-play font-semibold text-xl gap-2"
+                    className="ml-2 h-[inherit] flex items-center dark:text-slate-50 font-play font-semibold text-xl gap-2"
                     onClick={(e) => {
                         e.preventDefault();
                         window.scrollTo({ top: 0, behavior: "smooth" });
                     }}
                 >
                     <img
-                        src="https://avatars.githubusercontent.com/u/48118327?v=4"
+                        src="https://avatars.githubusercontent.com/u/48118327?v=4&s=100"
                         className="rounded-xl"
                         alt="Foto Profil"
                         width={30.19}
@@ -86,8 +86,8 @@ export const Navbar = () => {
                 className={`${isListVisible ? "" : "hidden"
                     } w-full md:flex md:items-center md:w-auto`}
             >
-                <ul className="pt-4 text-base text-gray-500 md:flex md:justify-between md:pt-0">
-                    <a className="md:p-4 py-2 block hover:text-black" href="/blog">
+                <ul className={`pt-4 text-base ${isTransparent ? "text-gray-900 dark:text-slate-300" : "text-gray-500"} md:flex md:justify-between md:pt-0`}>
+                    <a className="md:p-4 py-2 block hover:text-black dark:hover:text-white" href="/blog">
                         Blog
                     </a>
 
@@ -103,7 +103,7 @@ export const Navbar = () => {
                                         if (isListVisible) setListVisible(false);
                                     }
                                 }}
-                                className="md:p-4 py-2 block hover:text-black"
+                                className="md:p-4 py-2 block hover:text-black dark:hover:text-white"
                             >
                                 {list.name}
                             </button>

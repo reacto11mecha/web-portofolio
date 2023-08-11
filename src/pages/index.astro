@@ -2,16 +2,20 @@
 import Layout from "@/layouts/DefaultLayout.astro";
 
 import { Navbar } from "@/components/home/Navbar";
+import { Header } from "@/components/home/Header";
 ---
 
-<Layout title="Ezra Khairan Permana | Portofolio" description="Website Portofolio Ezra Khairan Permana">
-    <Navbar client:idle />
+<Layout
+  title="Ezra Khairan Permana | Portofolio"
+  description="Website Portofolio Ezra Khairan Permana"
+>
+  <Navbar client:idle />
 
-    <main>
-        <section id="hero" class="h-screen"></section>
-        <section id="tentang-saya" class="h-screen"></section>
-        <section id="skill" class="h-screen"></section>
-        <section id="projects" class="h-screen"></section>
-        <section id="contacts" class="h-screen"></section>
-    </main>
+  <main>
+    <Header client:load />
+    <section id="tentang-saya" class="h-screen"></section>
+    <section id="skill" class="h-screen"></section>
+    <section id="projects" class="h-screen"></section>
+    <section id="contacts" class="h-screen"></section>
+  </main>
 </Layout>
