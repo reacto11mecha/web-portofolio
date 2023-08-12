@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 const lists = [
     {
         name: "Tentang Saya",
-        id: "tentang-saya",
+        id: "introduction",
     },
     {
         name: "Skill",
