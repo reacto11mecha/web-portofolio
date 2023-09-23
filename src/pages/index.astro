@@ -8,6 +8,9 @@ import Layout from "@/layouts/DefaultLayout.astro";
 import { Navbar } from "@/components/home/Navbar";
 import { Header } from "@/components/home/Header";
 import { Introduction } from "@/components/home/Introduction";
+import { Skill } from "@/components/home/Skill";
+
+import svgContent from "../../assets/symbol-defs.svg?raw";
 
 const { DATE_TIME, DATE_TIMEZONE } = loadEnv(
   import.meta.env.MODE,
@@ -31,12 +34,15 @@ const age = Math.floor(diff.years).toString();
   title="Ezra Khairan Permana | Portofolio"
   description="Website Portofolio Ezra Khairan Permana"
 >
+  <Fragment set:html={svgContent} />
+
   <Navbar client:idle />
 
   <main>
     <Header client:load />
     <Introduction time={age} />
-    <section id="skill" class="h-screen"></section>
+    <Skill />
+
     <section id="projects" class="h-screen"></section>
     <section id="contacts" class="h-screen"></section>
   </main>
