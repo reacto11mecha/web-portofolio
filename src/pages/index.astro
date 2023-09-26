@@ -34,6 +34,17 @@ const age = Math.floor(diff.years).toString();
   title="Ezra Khairan Permana | Portofolio"
   description="Website Portofolio Ezra Khairan Permana"
 >
+  <style is:global>
+    .icon {
+      display: inline-block;
+      width: 1em;
+      height: 1em;
+      stroke-width: 0;
+      stroke: currentColor;
+      fill: currentColor;
+    }
+  </style>
+
   <Fragment set:html={svgContent} />
 
   <Navbar client:idle />

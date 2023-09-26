@@ -1,4 +1,6 @@
 import { useEffect, useRef, } from "react";
+
+// @ts-ignore
 import Typed from "typed.js";
 
 export const Header = () => {

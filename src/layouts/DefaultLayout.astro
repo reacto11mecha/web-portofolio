@@ -7,7 +7,7 @@ export interface Props {
 const { title, description } = Astro.props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -19,18 +19,24 @@ const { title, description } = Astro.props;
     <link rel="icon" href="/favicon.png" />
 
     <title>{title}</title>
+
+    <script is:inline>
+      const setDarkMode = () => {
+        if (
+          localStorage.theme === "dark" ||
+          (!("theme" in localStorage) &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches)
+        ) {
+          document.documentElement.classList.add("dark");
+        } else {
+          document.documentElement.classList.remove("dark");
+        }
+      };
+
+      setDarkMode();
+    </script>
   </head>
-  <body class="dark:bg-neutral-950 dark:text-white transition-all ease-linear">
-    <style is:global>
-      .icon {
-        display: inline-block;
-        width: 1em;
-        height: 1em;
-        stroke-width: 0;
-        stroke: currentColor;
-        fill: currentColor;
-      }
-    </style>
+  <body class="dark:bg-neutral-950 dark:text-white transition">
     <slot />
   </body>
 </html>

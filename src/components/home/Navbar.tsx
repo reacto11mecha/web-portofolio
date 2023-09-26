@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { BsSunFill, BsMoon } from "react-icons/bs"
 
 const lists = [
     {
@@ -20,10 +21,17 @@ const lists = [
 ];
 
 export const Navbar = () => {
-    const [isTransparent, setIsTransparent] = useState(true);
+    const [isDarkMode, setDarkMode] = useState(false);
     const [isListVisible, setListVisible] = useState(false);
+    const [isTransparent, setIsTransparent] = useState(true);
 
     useEffect(() => {
+        setDarkMode(
+            localStorage.theme === "dark" ||
+            (!("theme" in localStorage) &&
+                window.matchMedia("(prefers-color-scheme: dark)").matches)
+        );
+
         const sectionSiapaKami = document.querySelector("#hero")!;
 
         const options = {
@@ -49,14 +57,29 @@ export const Navbar = () => {
         };
     }, []);
 
+    const toggleTheme = () => {
+        const nextDark = !isDarkMode;
+
+        setDarkMode(nextDark);
+
+        if (nextDark) {
+            localStorage.theme = "dark";
+            document.documentElement.classList.add("dark");
+        } else {
+            localStorage.theme = "light";
+            document.documentElement.classList.remove("dark");
+        }
+    };
+
+
     return (
         <nav
-            className={`flex fixed top-0 flex-wrap items-center justify-between w-full py-4 md:py-0 px-4 text-lg ${isTransparent ? "" : "bg-white dark:bg-neutral-900 dark:border-neutral-900 border-b border-solid"
+            className={`flex fixed top-0 flex-wrap items-center justify-between w-full py-4 md:py-0 px-4 text-lg ${isTransparent ? "" : "bg-white dark:bg-neutral-950 dark:border-neutral-900 border-b border-solid"
                 } z-10`}
         >
             <div className="h-[inherit]">
                 <button
-                    className="ml-2 h-[inherit] flex items-center dark:text-slate-50 font-play font-semibold text-xl gap-2"
+                    className="ml-2 h-[inherit] flex items-center tracking-wide dark:text-slate-50 font-play font-semibold text-xl gap-2"
                     onClick={(e) => {
                         e.preventDefault();
                         window.scrollTo({ top: 0, behavior: "smooth" });
@@ -69,7 +92,7 @@ export const Navbar = () => {
                         width={30.19}
                         height={30.19}
                     />
-                    Ezra Khairan Permana
+                    rmecha
                 </button>
             </div>
 
@@ -109,6 +132,10 @@ export const Navbar = () => {
                             </button>
                         </li>
                     ))}
+
+                    <button className="md:p-4 py-2 block hover:text-black dark:hover:text-white" onClick={toggleTheme}>
+                        {isDarkMode ? <BsMoon /> : <BsSunFill />}
+                    </button>
                 </ul>
             </div>
         </nav>

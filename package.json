@@ -5,25 +5,26 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build",
+    "build": "astro check && tsc --noEmit && astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/check": "^0.2.0",
     "@astrojs/react": "^3.0.2",
     "@astrojs/sitemap": "^3.0.0",
     "@astrojs/tailwind": "^5.0.0",
+    "@types/luxon": "^3.3.2",
     "@types/react": "^18.2.22",
     "@types/react-dom": "^18.0.6",
     "astro": "^3.1.4",
     "luxon": "^3.4.3",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
+    "react-icons": "^4.11.0",
     "tailwindcss": "^3.0.24",
-    "typed.js": "^2.0.16"
-  },
-  "devDependencies": {
-    "@types/luxon": "^3.3.2",
+    "typed.js": "^2.0.16",
+    "typescript": "^5.2.2",
     "vite": "^4.4.9"
   }
 }

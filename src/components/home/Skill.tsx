@@ -62,12 +62,12 @@ export const Skill = () => (
             className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 mt-14"
         >
             {cards.map((card) => (
-                <div className="rounded border p-10 flex flex-col gap-5" key={card.title}>
+                <div className="rounded border dark:bg-neutral-900 dark:border-neutral-900 p-10 flex flex-col gap-5 dark:shadow-neutral-500 shadow transition hover:shadow-lg hover:-translate-y-3" key={card.title}>
                     <h3 className="font-bold font-poppins text-2xl">{card.title}</h3>
 
                     <div className="flex flex-col gap-2">
                         {card.items.map((item) => (
-                            <div key={item.text} >
+                            <div key={item.text}>
                                 <p className="font-lato text-lg flex gap-3 items-center">
                                     <Icon icon={item.icon} />{item.text}
                                 </p>
