@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { BsSunFill, BsMoon } from "react-icons/bs"
+import { BsSunFill, BsMoon } from "react-icons/bs/index"
 
 const lists = [
     {
