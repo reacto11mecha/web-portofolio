@@ -1,6 +1,6 @@
 export const Introduction = ({ time }: { time: string }) => {
     return (
-        <section className="m-auto min-h-[160vh] px-6 pt-24 sm:px-14 sm:pt-28 md:px-16" id="introduction">
+        <section className="m-auto min-h-[160vh] md:min-h-screen px-6 pt-24 sm:px-14 sm:pt-28 md:px-16" id="introduction">
             <h1 className="font-bold dark:text-gray-50 font-poppins text-3xl sm:text-3xl md:text-4xl mb-8">Tentang Saya</h1>
             <div className="font-light font-lato flex flex-wrap gap-10 text-xl md:flex-nowrap md:gap-18 lg:gap-12 lg:text-2xl leading-loose">
                 <p>
