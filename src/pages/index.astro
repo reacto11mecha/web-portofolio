@@ -1,0 +1,60 @@
+---
+import path from "path";
+import { loadEnv } from "vite";
+import { DateTime } from "luxon";
+
+import Layout from "@/layouts/DefaultLayout.astro";
+
+import { Navbar } from "@/components/home/Navbar";
+import { Header } from "@/components/home/Header";
+import { Introduction } from "@/components/home/Introduction";
+import { Skill } from "@/components/home/Skill";
+
+import svgContent from "../../assets/symbol-defs.svg?raw";
+
+const { DATE_TIME, DATE_TIMEZONE } = loadEnv(
+  import.meta.env.MODE,
+  path.resolve(),
+  ""
+);
+
+const past = DateTime.fromObject(
+  JSON.parse(import.meta.env.DATE_TIME ?? DATE_TIME),
+  {
+    zone: import.meta.env.DATE_TIMEZONE ?? DATE_TIMEZONE,
+  }
+);
+const now = DateTime.now();
+
+const diff = now.diff(past, ["years"]);
+const age = Math.floor(diff.years).toString();
+---
+
+<Layout
+  title="Ezra Khairan Permana | Portofolio"
+  description="Website Portofolio Ezra Khairan Permana"
+>
+  <style is:global>
+    .icon {
+      display: inline-block;
+      width: 1em;
+      height: 1em;
+      stroke-width: 0;
+      stroke: currentColor;
+      fill: currentColor;
+    }
+  </style>
+
+  <Fragment set:html={svgContent} />
+
+  <Navbar client:idle />
+
+  <main>
+    <Header client:load />
+    <Introduction time={age} />
+    <Skill />
+
+    <section id="projects" class="h-screen"></section>
+    <section id="contacts" class="h-screen"></section>
+  </main>
+</Layout>
