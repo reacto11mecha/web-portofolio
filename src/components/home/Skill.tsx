@@ -25,7 +25,6 @@ const cards: CardInterface[] = [
         title: "Front End",
         items: [
             { text: "Tailwind CSS", icon: "tailwindcss" },
-            { text: "Picnic CSS", icon: "picnic" },
             { text: "React", icon: "react" },
             { text: "Solid", icon: "solid" },
             { text: "Next.js", icon: "next" },

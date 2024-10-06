@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { BsSunFill, BsMoon } from "react-icons/bs/index"
+import { BsSunFill, BsMoon } from "react-icons/bs"
 
 const lists = [
     {
@@ -109,8 +109,8 @@ export const Navbar = () => {
                 className={`${isListVisible ? "" : "hidden"
                     } w-full md:flex md:items-center md:w-auto`}
             >
-                <ul className={`pt-4 text-base ${isTransparent ? "text-gray-900 dark:text-slate-300" : "text-gray-500"} md:flex md:justify-between md:pt-0`}>
-                    <a className="md:p-4 py-2 block hover:text-black dark:hover:text-white" href="/blog">
+                <ul className={`pt-4 text-base ${isTransparent ? "text-gray-900 dark:text-slate-300" : "dark:text-slate-300"} md:flex md:justify-between md:pt-0`}>
+                    <a className="md:p-4 py-2 block hover:text-black dark:hover:text-white" target="_blank" rel="noopener noreferrer" href="https://notes.rmecha.my.id/">
                         Blog
                     </a>
 
